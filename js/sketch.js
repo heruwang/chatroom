@@ -70,12 +70,23 @@ function sendMessage(){
 }
 
 function displayPastChats(){
-  for(let i = 0; i< fbDataArray.length; i++){
+  let length = fbDataArray.length;
+
+  for(let i = 0; i< length; i++){
     let p = createP(fbDataArray[i].message);
+    p.position(i * 100, random(windowHeight));
+    p.style('background-color', `hsl(${(i * 5) % 300}, 80%, 50%)`);
+    // let opacity = map(i/ length, 0, 1, 0, .9);
+    // p.style('opacity', opacity);
   }
+
 }
 
 function displayLastChats(){
   let index = fbDataArray.length-1;
  let p = createP(fbDataArray[index].message);
+ p.position(index * 100, random(windowHeight));
+ p.style('background-color', `hsl(${(index * 5) % 300}, 80%, 50%)`);
+ // let opacity = map(i/ length, 0, 1, 0, .9);
+ // p.style('opacity', opacity);
 }
