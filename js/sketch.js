@@ -78,6 +78,8 @@ function displayPastChats(){
     p.style('background-color', `hsl(${(i * 5) % 300}, 80%, 50%)`);
     // let opacity = map(i/ length, 0, 1, 0, .9);
     // p.style('opacity', opacity);
+    p.class('messages');
+    p.parent('messagesDiv');
   }
 
 }
@@ -89,4 +91,5 @@ function displayLastChats(){
  p.style('background-color', `hsl(${(index * 5) % 300}, 80%, 50%)`);
  // let opacity = map(i/ length, 0, 1, 0, .9);
  // p.style('opacity', opacity);
+   p.class('messages');
 }
