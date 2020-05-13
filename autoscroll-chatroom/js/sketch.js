@@ -35,6 +35,7 @@ function setup() {
   messageInput.changed(sendMessage);
   sendBtn.mousePressed(sendMessage);
 
+
   // PASTE YOUR FIREBASE CONFIG DATA HERE
   let config = {
     apiKey: "AIzaSyAns57wfC4JE6_xq7J1VCUp_todVSX4tm8",
@@ -71,7 +72,12 @@ function draw() {
 }
 
 function sendMessage() {
-  if(usernameInput.value() !== '' && messageInput.value() != ''){
+
+  if (usernameInput.value().length < 30) {
+    alert('The message length can not be smaller than 30 characters!');
+  }
+
+  else if (usernameInput.value() !== '' && messageInput.value() != '' ){
 
   let timestamp = Date.now();
   let chatObject = {
@@ -83,7 +89,8 @@ function sendMessage() {
   createNode(folderName, timestamp, chatObject);
   messageInput.value('');
 
-} else{
+} 
+else{
   alert('type username and message first!');
 }
 }
