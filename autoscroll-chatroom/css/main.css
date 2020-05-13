@@ -2,7 +2,7 @@ html,body {
   margin: 0;
   padding: 0;
   font-family: 'Gaegu';font-size: 22px;
-  background-image: url("/autoscroll-chatroom/envelope.jpg");
+  background-image: url("https://heruwang.github.io/chatroom/autoscroll-chatroom/envelope.jpg");
    background-repeat: repeat;
 
 }
@@ -23,7 +23,7 @@ canvas {
   padding:30px;
 }
 #chat{
-  background-image: url("/autoscroll-chatroom/letter.jpg");
+  background-image: url("https://heruwang.github.io/chatroom/autoscroll-chatroom/letter.jpg");
   width: 600px;
   height: 580px;
   margin: 50px auto;
