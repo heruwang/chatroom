@@ -73,11 +73,9 @@ function draw() {
 
 function sendMessage() {
 
-  if (usernameInput.value().length < 30) {
+  if (messageInput.value().length < 30) {
     alert('The message length can not be smaller than 30 characters!');
-  }
-
-  else if (usernameInput.value() !== '' && messageInput.value() != '' ){
+  }else if (usernameInput.value() !== '' && messageInput.value() != '' ){
 
   let timestamp = Date.now();
   let chatObject = {
@@ -89,7 +87,7 @@ function sendMessage() {
   createNode(folderName, timestamp, chatObject);
   messageInput.value('');
 
-} 
+}
 else{
   alert('type username and message first!');
 }
