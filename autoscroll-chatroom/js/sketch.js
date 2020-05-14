@@ -73,24 +73,23 @@ function draw() {
 
 function sendMessage() {
 
-  if (messageInput.value().length < 30) {
-    alert('The message length can not be smaller than 30 characters!');
-  }else if (usernameInput.value() !== '' && messageInput.value() != '' ){
+  if (usernameInput.value() !== '' && messageInput.value() != '') {
+    if (messageInput.value().length < 30) {
+      alert('The message length can not be smaller than 30 characters!');
+    } else {
+      let timestamp = Date.now();
+      let chatObject = {
+        username: usernameInput.value(),
+        message: messageInput.value(),
+        timestamp: timestamp,
+      }
 
-  let timestamp = Date.now();
-  let chatObject = {
-    username:usernameInput.value(),
-    message: messageInput.value(),
-    timestamp: timestamp,
+      createNode(folderName, timestamp, chatObject);
+      messageInput.value('');
+    }
+  } else {
+    alert('type username and message first!');
   }
-
-  createNode(folderName, timestamp, chatObject);
-  messageInput.value('');
-
-}
-else{
-  alert('type username and message first!');
-}
 }
 
 
